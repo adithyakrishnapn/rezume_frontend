@@ -1,0 +1,483 @@
+.container {
+  --color: #2563eb;
+  --color-light: #3b82f6;
+  --color-lighter: #dbeafe;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  --border-color: #e5e7eb;
+  --border-accent: #d1d5db;
+  --background-subtle: #f9fafb;
+  
+  min-width: 700px;
+  max-width: 750px;
+  margin: 0 auto;
+  flex: 1.2;
+  height: fit-content;
+  background: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 28px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid var(--color);
+  padding-bottom: 16px;
+  position: relative;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, var(--color) 0%, var(--color-light) 100%);
+  border-radius: 2px;
+}
+
+.header .heading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 6px;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.header .subHeading {
+  color: var(--color);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+  letter-spacing: 0.025em;
+}
+
+.header .links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+
+.header .link {
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: var(--background-subtle);
+  border: 1px solid var(--border-color);
+}
+
+.header .link:hover {
+  color: var(--color);
+  background: var(--color-lighter);
+  border-color: var(--color);
+}
+
+.header .link svg {
+  color: var(--color);
+  height: 16px;
+  width: 16px;
+  flex-shrink: 0;
+}
+
+.main {
+  display: flex;
+  gap: 28px;
+}
+
+.col1 {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.col2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.section .sectionTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  width: 100%;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--color);
+  position: relative;
+  letter-spacing: 0.025em;
+}
+
+.section .sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--color-light);
+}
+
+.section .content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section .content .item {
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 12px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.section .content .item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 6px;
+  height: 6px;
+  background: var(--color);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--color-lighter);
+}
+
+.section .content .item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.content .title {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.content .subTitle {
+  font-weight: 600;
+  color: var(--color);
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.content .overview {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.content .link {
+  display: inline-flex;
+  gap: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  color: var(--color);
+  text-decoration: none;
+  align-items: center;
+  margin-bottom: 3px;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.content .link:hover {
+  color: var(--color-light);
+}
+
+.content .link svg {
+  height: 12px;
+  width: 12px;
+  color: var(--color);
+  flex-shrink: 0;
+}
+
+.content .date {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.content .date svg {
+  height: 12px;
+  width: 12px;
+  color: var(--text-tertiary);
+}
+
+.content .points,
+.numbered {
+  padding-left: 16px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.content .points li,
+.numbered li {
+  margin-bottom: 4px;
+  padding-left: 2px;
+}
+
+.content .points li::marker {
+  color: var(--color);
+  font-weight: 600;
+}
+
+.numbered li {
+  list-style-type: decimal;
+}
+
+.numbered li::marker {
+  color: var(--color);
+  font-weight: 600;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ATS-Friendly Enhancements & Print Styles */
+@media print {
+  @page {
+    size: A4;
+    margin: 0.4in;
+  }
+  
+  .container {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    max-width: 7.5in;
+    min-width: auto;
+    margin: 0 auto;
+    gap: 12px;
+    page-break-inside: avoid;
+    width: 100%;
+  }
+  
+  .header {
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    page-break-after: avoid;
+  }
+  
+  .header .heading {
+    font-size: 1.9rem;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  
+  .header .subHeading {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  
+  .header .links {
+    gap: 10px;
+    row-gap: 4px;
+  }
+  
+  .header .link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 0.75rem;
+  }
+  
+  .main {
+    gap: 16px;
+  }
+  
+  .col1, .col2 {
+    gap: 12px;
+  }
+  
+  .section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  .section .sectionTitle {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    padding-bottom: 3px;
+  }
+  
+  .section .content {
+    gap: 8px;
+  }
+  
+  .section .content .item {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    padding-bottom: 8px;
+    gap: 3px;
+  }
+  
+  .section .content .item::before {
+    display: none;
+  }
+  
+  .section .content .item {
+    padding-left: 0;
+  }
+  
+  .section .sectionTitle::after {
+    display: none;
+  }
+  
+  .header::after {
+    display: none;
+  }
+  
+  .content .title {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+  }
+  
+  .content .subTitle {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+  }
+  
+  .content .overview {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  
+  .content .date {
+    font-size: 0.7rem;
+    margin-bottom: 4px;
+  }
+  
+  .content .link {
+    font-size: 0.7rem;
+    margin-bottom: 2px;
+  }
+  
+  .content .points,
+  .numbered {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    padding-left: 10px;
+  }
+  
+  .content .points li,
+  .numbered li {
+    margin-bottom: 1px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    min-width: auto;
+    max-width: 100%;
+    padding: 20px;
+    margin: 0 10px;
+  }
+  
+  .main {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .col1,
+  .col2 {
+    flex: 1;
+  }
+  
+  .header .heading {
+    font-size: 2.2rem;
+  }
+  
+  .header .links {
+    gap: 16px;
+  }
+  
+  .header .link {
+    padding: 4px 8px;
+    font-size: 0.85rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .container {
+    --color: #0066cc;
+    --color-light: #0066cc;
+    --color-lighter: #e6f3ff;
+    --text-primary: #000000;
+    --text-secondary: #333333;
+    --text-tertiary: #666666;
+    --border-color: #666666;
+    --border-accent: #333333;
+    --background-subtle: #f5f5f5;
+  }
+  
+  .header .link {
+    border-color: var(--border-accent);
+  }
+  
+  .section .content .item::before {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px var(--color);
+  }
+}
+
+/* Focus styles for accessibility */
+.header .link:focus,
+.content .link:focus {
+  outline: 2px solid var(--color);
+  outline-offset: 2px;
+}
+
+/* Improved text selection */
+::selection {
+  background: var(--color-lighter);
+  color: var(--text-primary);
+}
+
+/* Ensure proper text rendering */
+.container {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
